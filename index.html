@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプルなウェブページ</title>
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ようこそ、私のウェブページへ</h1>
+        
+        <h2>はじめに</h2>
+        <p>これはシンプルなHTMLページの例です。基本的な要素とスタイリングが含まれています。</p>
+        
+        <div class="highlight">
+            <p><strong>注目：</strong> このページは学習目的で作成されました。HTMLとCSSの基本的な構造を示しています。</p>
+        </div>
+        
+        <h2>主な特徴</h2>
+        <p>このページには以下の要素が含まれています：</p>
+        <ul>
+            <li>レスポンシブデザイン</li>
+            <li>日本語フォント対応</li>
+            <li>シンプルなスタイリング</li>
+            <li>ホバーエフェクト</li>
+        </ul>
+        
+        <h2>お問い合わせ</h2>
+        <p>ご質問やフィードバックがございましたら、お気軽にご連絡ください。</p>
+        
+        <a href="#" class="button" onclick="alert('ボタンがクリックされました！')">クリックしてみる</a>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+        
+        <p style="text-align: center; color: #999; font-size: 0.9em;">
+            © 2025 シンプルなウェブページ. すべての権利を保有します。
+        </p>
+    </div>
+
+    <script>
+        // ページ読み込み時にコンソールにメッセージを表示
+        console.log('ページが正常に読み込まれました！');
+        
+        // 簡単なインタラクション
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMが完全に読み込まれました');
+        });
+    </script>
+</body>
+</html>
