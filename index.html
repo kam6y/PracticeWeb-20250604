@@ -230,7 +230,7 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 2rem 0;
+            margin: 2rem auto;
         }
 
         .about-content {
@@ -281,6 +281,37 @@
             justify-content: center;
             font-size: 3rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(255, 107, 107, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-image:hover::after {
+            opacity: 1;
         }
 
         .project-content {
@@ -359,7 +390,7 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 5rem 0;
+            margin: 5rem auto;
             padding: 3rem;
         }
 
@@ -518,7 +549,7 @@
             <!-- PySCF App -->
             <div class="project-card">
                 <div class="project-image">
-                    🧪⚛️
+                    <img src="asset/img/pyscf-app-screenshot.png" alt="PySCF App Screenshot" />
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">PySCF App</h3>
@@ -543,7 +574,7 @@
             <!-- Harmonia -->
             <div class="project-card">
                 <div class="project-image">
-                    📊💼
+                    <img src="asset/img/harmonia-screenshot.png" alt="Harmonia Screenshot" />
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Harmonia</h3>
@@ -662,6 +693,30 @@
             } else {
                 header.style.background = 'rgba(12, 12, 12, 0.95)';
             }
+        });
+
+        // Image error handling
+        document.querySelectorAll('.project-image img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+                const fallbackContent = document.createElement('div');
+                fallbackContent.style.cssText = `
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 3rem;
+                    width: 100%;
+                    height: 100%;
+                `;
+                
+                if (this.alt.includes('PySCF')) {
+                    fallbackContent.textContent = '🧪⚛️';
+                } else if (this.alt.includes('Harmonia')) {
+                    fallbackContent.textContent = '📊💼';
+                }
+                
+                this.parentElement.appendChild(fallbackContent);
+            });
         });
     </script>
 </body>
