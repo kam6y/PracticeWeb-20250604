@@ -81,7 +81,7 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section with Enhanced Chemistry */
         .hero {
             height: 100vh;
             display: flex;
@@ -89,6 +89,7 @@
             justify-content: center;
             position: relative;
             background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            overflow: hidden;
         }
 
         .hero::before {
@@ -103,6 +104,375 @@
                 radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
             opacity: 0.6;
+        }
+
+        /* DNA Helix Animation */
+        .dna-helix {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 300px;
+            height: 500px;
+            opacity: 0.3;
+        }
+
+        .dna-strand {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00f5ff, #ff6b6b);
+            border-radius: 2px;
+            animation: dnaRotate 8s linear infinite;
+        }
+
+        .dna-strand:nth-child(1) {
+            left: 30%;
+            transform-origin: center;
+        }
+
+        .dna-strand:nth-child(2) {
+            right: 30%;
+            transform-origin: center;
+            animation-delay: -4s;
+        }
+
+        .base-pair {
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            left: 20%;
+            animation: basePairFloat 4s ease-in-out infinite;
+        }
+
+        .base-pair:nth-child(3) { top: 10%; animation-delay: 0s; }
+        .base-pair:nth-child(4) { top: 20%; animation-delay: -0.5s; }
+        .base-pair:nth-child(5) { top: 30%; animation-delay: -1s; }
+        .base-pair:nth-child(6) { top: 40%; animation-delay: -1.5s; }
+        .base-pair:nth-child(7) { top: 50%; animation-delay: -2s; }
+        .base-pair:nth-child(8) { top: 60%; animation-delay: -2.5s; }
+        .base-pair:nth-child(9) { top: 70%; animation-delay: -3s; }
+        .base-pair:nth-child(10) { top: 80%; animation-delay: -3.5s; }
+
+        @keyframes dnaRotate {
+            0% { transform: rotateY(0deg) rotateZ(0deg); }
+            100% { transform: rotateY(360deg) rotateZ(180deg); }
+        }
+
+        @keyframes basePairFloat {
+            0%, 100% { opacity: 0.6; transform: scaleX(1); }
+            50% { opacity: 1; transform: scaleX(1.2); }
+        }
+
+        /* Benzene Ring */
+        .benzene-ring {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 150px;
+            height: 150px;
+            opacity: 0.4;
+            animation: benzeneRotate 12s linear infinite;
+        }
+
+        .benzene-carbon {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #00f5ff;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .benzene-carbon:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .benzene-carbon:nth-child(2) { top: 25%; right: 0; }
+        .benzene-carbon:nth-child(3) { bottom: 25%; right: 0; }
+        .benzene-carbon:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .benzene-carbon:nth-child(5) { bottom: 25%; left: 0; }
+        .benzene-carbon:nth-child(6) { top: 25%; left: 0; }
+
+        .benzene-bond {
+            position: absolute;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            transform-origin: left center;
+        }
+
+        .benzene-bond:nth-child(7) {
+            top: 10%;
+            left: 50%;
+            width: 35px;
+            transform: translateX(-50%) rotate(30deg);
+        }
+
+        .benzene-bond:nth-child(8) {
+            top: 50%;
+            right: 10%;
+            width: 35px;
+            transform: rotate(90deg);
+        }
+
+        .benzene-bond:nth-child(9) {
+            bottom: 10%;
+            right: 20%;
+            width: 35px;
+            transform: rotate(150deg);
+        }
+
+        .benzene-bond:nth-child(10) {
+            bottom: 10%;
+            left: 50%;
+            width: 35px;
+            transform: translateX(-50%) rotate(210deg);
+        }
+
+        .benzene-bond:nth-child(11) {
+            top: 50%;
+            left: 10%;
+            width: 35px;
+            transform: rotate(270deg);
+        }
+
+        .benzene-bond:nth-child(12) {
+            top: 10%;
+            left: 20%;
+            width: 35px;
+            transform: rotate(330deg);
+        }
+
+        @keyframes benzeneRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Water Molecule */
+        .water-molecule {
+            position: absolute;
+            bottom: 20%;
+            right: 15%;
+            width: 120px;
+            height: 80px;
+            opacity: 0.5;
+            animation: waterFloat 6s ease-in-out infinite;
+        }
+
+        .oxygen {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+
+        .hydrogen {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .hydrogen:nth-child(2) {
+            top: 20%;
+            left: 20%;
+        }
+
+        .hydrogen:nth-child(3) {
+            top: 20%;
+            right: 20%;
+        }
+
+        .chemical-bond {
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            transform-origin: bottom center;
+        }
+
+        .bond1 {
+            bottom: 65%;
+            left: 45%;
+            transform: rotate(-30deg);
+        }
+
+        .bond2 {
+            bottom: 65%;
+            right: 45%;
+            transform: rotate(30deg);
+        }
+
+        @keyframes waterFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        /* Electron Orbital Visualization */
+        .electron-orbital {
+            position: absolute;
+            bottom: 30%;
+            left: 15%;
+            width: 200px;
+            height: 200px;
+            opacity: 0.3;
+        }
+
+        .orbital-path {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 50%;
+            animation: orbitalSpin 10s linear infinite;
+        }
+
+        .orbital-path:nth-child(1) {
+            transform: rotateX(0deg);
+        }
+
+        .orbital-path:nth-child(2) {
+            transform: rotateX(60deg);
+            animation-delay: -3.33s;
+        }
+
+        .orbital-path:nth-child(3) {
+            transform: rotateX(120deg);
+            animation-delay: -6.66s;
+        }
+
+        .electron {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+            animation: electronOrbit 3s linear infinite;
+        }
+
+        @keyframes orbitalSpin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        @keyframes electronOrbit {
+            0% { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+        }
+
+        /* Chemical Formulas with Enhanced Styling */
+        .chemical-formula {
+            position: absolute;
+            font-family: 'Courier New', monospace;
+            color: rgba(0, 245, 255, 0.4);
+            font-size: 1rem;
+            animation: formulaGlow 8s ease-in-out infinite;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .formula-1 {
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .formula-2 {
+            top: 60%;
+            right: 5%;
+            animation-delay: 2s;
+            color: rgba(255, 107, 107, 0.4);
+            border-color: rgba(255, 107, 107, 0.2);
+        }
+
+        .formula-3 {
+            bottom: 15%;
+            left: 30%;
+            animation-delay: 4s;
+            color: rgba(0, 255, 136, 0.4);
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+
+        .formula-4 {
+            top: 40%;
+            left: 40%;
+            animation-delay: 6s;
+            color: rgba(255, 195, 0, 0.4);
+            border-color: rgba(255, 195, 0, 0.2);
+        }
+
+        @keyframes formulaGlow {
+            0%, 100% { 
+                opacity: 0.4; 
+                transform: translateY(0px) scale(1);
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: translateY(-10px) scale(1.05);
+            }
+        }
+
+        /* Periodic Table Element */
+        .periodic-element {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            animation: elementPulse 4s ease-in-out infinite;
+        }
+
+        .element-symbol {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #00f5ff;
+        }
+
+        .element-number {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .element-1 {
+            top: 25%;
+            right: 25%;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            bottom: 35%;
+            left: 5%;
+            animation-delay: 2s;
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .element-2 .element-symbol {
+            color: #ff6b6b;
+        }
+
+        @keyframes elementPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(0, 245, 255, 0.3);
+            }
+            50% { 
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+            }
         }
 
         .hero-content {
@@ -134,77 +504,6 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-        }
-
-        .chemical-formula {
-            position: absolute;
-            font-family: 'Courier New', monospace;
-            color: rgba(0, 245, 255, 0.3);
-            font-size: 0.9rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .formula-1 {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .formula-2 {
-            top: 30%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .formula-3 {
-            bottom: 25%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.6; }
-        }
-
-        /* Molecule Animation */
-        .molecule {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            right: 10%;
-            opacity: 0.2;
-        }
-
-        .atom {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            animation: orbit 10s linear infinite;
-        }
-
-        .atom:nth-child(1) {
-            background: #00f5ff;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .atom:nth-child(2) {
-            background: #ff6b6b;
-            animation-delay: -2s;
-        }
-
-        .atom:nth-child(3) {
-            background: #00ff88;
-            animation-delay: -4s;
-        }
-
-        @keyframes orbit {
-            from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
-            to { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
         }
 
         /* Sections */
@@ -467,12 +766,17 @@
                 grid-template-columns: 1fr;
             }
 
-            .molecule {
+            .dna-helix,
+            .benzene-ring,
+            .water-molecule,
+            .electron-orbital,
+            .periodic-element {
                 display: none;
             }
 
             .chemical-formula {
-                display: none;
+                font-size: 0.8rem;
+                padding: 0.3rem 0.5rem;
             }
         }
 
@@ -509,14 +813,72 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="chemical-formula formula-1">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O</div>
-        <div class="chemical-formula formula-2">∇²ψ + (2m/ℏ²)[E - V]ψ = 0</div>
-        <div class="chemical-formula formula-3">H₂O + NaCl → Na⁺ + Cl⁻ + H₂O</div>
+        <!-- Enhanced Chemical Formulas -->
+        <div class="chemical-formula formula-1">C₆H₆ (Benzene Ring)</div>
+        <div class="chemical-formula formula-2">H₂O + NaCl → Na⁺ + Cl⁻ + H₂O</div>
+        <div class="chemical-formula formula-3">2H₂ + O₂ → 2H₂O + Energy</div>
+        <div class="chemical-formula formula-4">E = hν (Planck's Equation)</div>
         
-        <div class="molecule">
-            <div class="atom"></div>
-            <div class="atom"></div>
-            <div class="atom"></div>
+        <!-- DNA Helix Structure -->
+        <div class="dna-helix">
+            <div class="dna-strand"></div>
+            <div class="dna-strand"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+            <div class="base-pair"></div>
+        </div>
+
+        <!-- Benzene Ring Structure -->
+        <div class="benzene-ring">
+            <div class="benzene-carbon"></div>
+            <div class="benzene-carbon"></div>
+            <div class="benzene-carbon"></div>
+            <div class="benzene-carbon"></div>
+            <div class="benzene-carbon"></div>
+            <div class="benzene-carbon"></div>
+            <div class="benzene-bond"></div>
+            <div class="benzene-bond"></div>
+            <div class="benzene-bond"></div>
+            <div class="benzene-bond"></div>
+            <div class="benzene-bond"></div>
+            <div class="benzene-bond"></div>
+        </div>
+
+        <!-- Water Molecule -->
+        <div class="water-molecule">
+            <div class="oxygen"></div>
+            <div class="hydrogen"></div>
+            <div class="hydrogen"></div>
+            <div class="chemical-bond bond1"></div>
+            <div class="chemical-bond bond2"></div>
+        </div>
+
+        <!-- Electron Orbital -->
+        <div class="electron-orbital">
+            <div class="orbital-path">
+                <div class="electron"></div>
+            </div>
+            <div class="orbital-path">
+                <div class="electron"></div>
+            </div>
+            <div class="orbital-path">
+                <div class="electron"></div>
+            </div>
+        </div>
+
+        <!-- Periodic Table Elements -->
+        <div class="periodic-element element-1">
+            <div class="element-number">6</div>
+            <div class="element-symbol">C</div>
+        </div>
+        <div class="periodic-element element-2">
+            <div class="element-number">8</div>
+            <div class="element-symbol">O</div>
         </div>
 
         <div class="hero-content">
@@ -537,6 +899,7 @@
                 <br><br>
                 理論と実装の両面から問題にアプローチし、
                 堅牢で拡張性のあるソリューションの提供を目指しています。
+                分子構造の可視化からWeb開発まで、科学とテクノロジーの融合で新たな価値を創造します。
             </p>
         </div>
     </section>
@@ -566,7 +929,7 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/kam6y/PySCF_app" class="btn btn-primary" target="_blank">GitHub</a>
-                        <a href="#" class="btn btn-secondary">Demo</a>
+                        <a href="https://pyscf-app-dft.streamlit.app/" class="btn btn-secondary">Demo</a>
                     </div>
                 </div>
             </div>
@@ -695,29 +1058,80 @@
             }
         });
 
-        // Image error handling
-        document.querySelectorAll('.project-image img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.style.display = 'none';
-                const fallbackContent = document.createElement('div');
-                fallbackContent.style.cssText = `
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 3rem;
-                    width: 100%;
-                    height: 100%;
-                `;
-                
-                if (this.alt.includes('PySCF')) {
-                    fallbackContent.textContent = '🧪⚛️';
-                } else if (this.alt.includes('Harmonia')) {
-                    fallbackContent.textContent = '📊💼';
-                }
-                
-                this.parentElement.appendChild(fallbackContent);
+        // Interactive molecular animations based on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            // DNA helix scroll effect
+            const dnaHelix = document.querySelector('.dna-helix');
+            if (dnaHelix) {
+                dnaHelix.style.transform = `translateY(${rate * 0.1}px) rotateY(${scrolled * 0.2}deg)`;
+            }
+            
+            // Benzene ring scroll effect
+            const benzeneRing = document.querySelector('.benzene-ring');
+            if (benzeneRing) {
+                benzeneRing.style.transform = `translateY(${rate * 0.2}px) rotate(${scrolled * 0.1}deg)`;
+            }
+            
+            // Water molecule scroll effect
+            const waterMolecule = document.querySelector('.water-molecule');
+            if (waterMolecule) {
+                waterMolecule.style.transform = `translateY(${rate * 0.15}px)`;
+            }
+        });
+
+        // Add dynamic chemical reactions on hover
+        document.querySelectorAll('.chemical-formula').forEach((formula, index) => {
+            formula.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) translateY(-5px)';
+                this.style.zIndex = '10';
+            });
+            
+            formula.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) translateY(0px)';
+                this.style.zIndex = '1';
             });
         });
+
+        // Periodic elements interaction
+        document.querySelectorAll('.periodic-element').forEach(element => {
+            element.addEventListener('click', function() {
+                // Add a ripple effect
+                const ripple = document.createElement('div');
+                ripple.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border-radius: 50%;
+                    background: rgba(0, 245, 255, 0.3);
+                    transform: translate(-50%, -50%);
+                    animation: ripple 0.6s ease-out;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    width: 100px;
+                    height: 100px;
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
